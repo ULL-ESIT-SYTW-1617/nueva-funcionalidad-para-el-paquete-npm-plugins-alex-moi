@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla. Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones sobre cada herramienta.
+El objetivo de esta práctica es crear un package **NodeJS** y publicarlo en npm. El paquete se construye a partir de el código que haya desarrollado en la práctica anterior.
 
 ## Enlaces importantes
 *  [Despligue gh-pages Tareas Iniciales SYTW]()
