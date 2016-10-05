@@ -38,6 +38,12 @@
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "simple-git": "1.51.0"
+    "gh-pages": "^0.11.0",
+    "gitbook-cli": "^2.3.0",
+    "gulp": "^3.9.1",
+    "simple-git": "^1.51.0"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
   }
 }
