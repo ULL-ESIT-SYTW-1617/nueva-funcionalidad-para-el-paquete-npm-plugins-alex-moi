@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi.git",
-    "wiki": ""
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi.git",
+    "wiki": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi.wiki.git"
   },
   "keywords": [
     "gitbook",
@@ -33,7 +33,7 @@
     "url": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi/issues"
   },
   "bin": {
-    "gitbook-start-alex-moi-nitesh": "./bin/gitbook.js"
+    "gitbook-start-alex-moi-nitesh": "./bin/gitbook-start-alex-moi-nitesh.js"
   },
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi#readme",
   "dependencies": {
