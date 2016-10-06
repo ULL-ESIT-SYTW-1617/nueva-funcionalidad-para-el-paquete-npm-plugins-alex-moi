@@ -2,7 +2,7 @@
   "name": "gitbook-start-alex-moi-nitesh",
   "version": "1.0.0",
   "description": "Module to build a book on GitBook",
-  "main": "index.js",
+  "main": "../lib/*",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
