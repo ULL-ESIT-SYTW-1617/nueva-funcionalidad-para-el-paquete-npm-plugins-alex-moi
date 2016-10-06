@@ -1,11 +1,9 @@
 var fs = require('fs-extra')
 var path = require("path");
-var appDir = path.resolve(__dirname);
-var ruta = appDir+'/../template';
-console.log(ruta)
 
+console.log(path.resolve(__dirname))
 
-fs.copy(ruta, './template/pepe', function (err) {
+fs.copy('./template', path.resolve(__dirname), function (err) {
   if (err) return console.error(err)
   console.log("success!")
 });
