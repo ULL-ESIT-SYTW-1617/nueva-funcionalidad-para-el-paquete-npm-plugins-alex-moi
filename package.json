@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-alex-moi-nitesh",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Module to build a book on GitBook",
   "main": "../lib/*",
   "scripts": {
