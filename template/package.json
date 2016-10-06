@@ -1,41 +1,35 @@
 {
-  "name": "gitbook-start-alex-moi-nitesh",
-  "version": "1.0.1",
-  "description": "Module to build a book on GitBook",
-  "main": "../lib/*",
+  "name": "",
+  "version": "1.0.0",
+  "description": "Book",
+  "main": "index.js",
   "scripts": {
+    "generate-gitbook": "./scripts/losh generate-gitbook",
+    "generate-wiki": "./scripts/losh generate-wiki",
+    "build": "npm install && npm i gitbook-cli && npm run generate-gitbook && npm run generate-wiki",
+    "deploy-gitbook": "./scripts/losh deploy-gitbook",
+    "deploy-wiki": "./scripts/losh deploy-wiki",
+    "deploy": "npm run build && npm run deploy-gitbook && npm run deploy-wiki",
+    "version": "./scripts/losh version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi.git",
-    "wiki": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi.wiki.git"
+    "url": "",
+    "wiki": ""
   },
   "keywords": [
     "gitbook",
     "npm package"
   ],
-  "author": "Moises Yanes Carballo <alu0100782851@ull.edu.es> (http://alu0100782851.github.io/)",
-  "contributors": [
-    {
-      "name": "Alexander Cole Mora",
-      "email": "alu0100767421@ull.edu.es",
-      "url": "http://alu0100767421.github.io/"
-    },
-    {
-      "name": "Nitesh Gul Ramnani",
-      "email": "alu0100814651@ull.edu.es",
-      "url": "http://alu0100814651.github.io/blog/"
-    }
-  ],
+  "author": "",
+  
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi/issues"
+    "url": ""
   },
-  "bin": {
-    "gitbook-start-alex-moi-nitesh": "./bin/gitbook-start-alex-moi-nitesh.js"
-  },
-  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-alex-moi#readme",
+  
+  "homepage": "",
   "dependencies": {
     "fs": "0.0.1-security",
     "gh-pages": "^0.11.0",

@@ -64,6 +64,9 @@ if(argv.d){
   	if (err)
       console.error(err)
 	});
+ 
+ 
+  
   
   fs.copyFile("./node_modules/gitbook-start-alex-moi-nitesh/gulpfile.js","./" + argv.d+ "/gulpfile.js",function(err){
     if(err)
@@ -75,5 +78,15 @@ if(argv.d){
     console.log(err);
   });
   
+  fs.copyFile("./node_modules/gitbook-start-alex-moi-nitesh/template/package.json","./" + argv.d + "/package.json",function(err){
+    if(err)
+    console.log(err);
+  });
   
+ 
+ 
+ 
+ 
+ 
+
 }
