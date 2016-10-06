@@ -3,11 +3,11 @@ var shell = require('gulp-shell');
 
 
 gulp.task('build', function() {
-  return gulp.src('').pipe(shell(['./scripts/generate-gitbook']));
+  return gulp.src('').pipe(shell(['./scripts/generate-gitbook.ejs']));
 });
 
 gulp.task('deploy', function () {
-  return gulp.src('').pipe(shell(["./scripts/deploy-gitbook"]));
+  return gulp.src('').pipe(shell(["./scripts/deploy-gitbook.ejs"]));
 });
 
 
@@ -19,9 +19,9 @@ gulp.task('deploy', function () {
 
 
 gulp.task('wikibuild', function() {
-   return gulp.src('').pipe(shell(['./scripts/generate-wiki'])); 
+   return gulp.src('').pipe(shell(['./scripts/generate-wiki.ejs'])); 
 });
 
 gulp.task('wikideploy', function() {
-   return gulp.src('').pipe(shell(['./scripts/deploy-wiki'])); 
+   return gulp.src('').pipe(shell(['./scripts/deploy-wiki.ejs'])); 
 });
