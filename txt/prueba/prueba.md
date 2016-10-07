@@ -1,3 +1,0 @@
-otra prueba
-
-otra prueba

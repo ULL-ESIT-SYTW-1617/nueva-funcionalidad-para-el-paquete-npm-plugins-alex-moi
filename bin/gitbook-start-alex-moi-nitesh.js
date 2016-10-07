@@ -1,92 +1,91 @@
 #! /usr/bin/env node
 
-/*
-var fs_extra = require('fs-extra')
-var fs = require("fs")
-var path = require("path");
-
-console.log(path.resolve(__dirname))
-
-
-//modificar package.json añadiendo la url del repo del usuario
-
-
-
-//quitar las extensiones ejs a package.json
-fs.rename('../template/package.json.ejs', '../template/package.json', (err) => {
-  if (err) throw err;
-  console.log('renamed complete');
-});
-
-
-//copiar directorio template en el directorio del usuario
-/*
-fs_extra.copy('./template', path.resolve(__dirname, 'template'), function (err) {
-  if (err) return console.error(err)
-  console.log("success!")
-});*/
-
-
-
-
 var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs-extended');
+var ejs = require("ejs");
+var path = require("path");
 
-if(argv.d){
+
+var author      = argv.a || '';
+var name        = argv.n || '';
+var directorio  = argv.d;
+var repo_url    = argv.u || '';
+var help        = argv.h;
+
+
+if(help){
+  console.log("\n\nAyuda GitBook-Start-Alex-Moi-Nitesh:"
+              +"\n\nLos argumentos aceptados son:"
+              +"\n -a: Especificar el autor"
+              +"\n -n: Especificar el name del package.json"
+              +"\n -d: Especificar el nombre del directorio"
+              +"\n -u: Especificar la url del repositorio git\n");
+}
+
+
+if(directorio){
   
   //creamos el directorio raiz
-  fs.createDir("./" + argv.d, function(err){
+  fs.createDir("./" + directorio, function(err){
     if(err)
       console.log(err);
 	});
   
   
   //creamos el directorio txt
-  fs.createDir("./" + argv.d + "/txt", function(err){
+  fs.createDir("./" + directorio + "/txt", function(err){
     if(err)
       console.log(err);
 	});
+	
 	
 	//creamos el directorio scripts
-	fs.createDir("./" + argv.d + "/scripts", function(err){
+	fs.createDir("./" + directorio + "/scripts", function(err){
     if(err)
       console.log(err);
 	});
 	
+	
 	//copiamos lo que hay en txt y lo ponemos en el txt creado
-  fs.copyDir("./node_modules/gitbook-start-alex-moi-nitesh/txt", "./" + argv.d + "/txt", function (err) {
+  fs.copyDir(path.join(__dirname, '..', 'txt'), "./" + directorio + "/txt", function (err) {
   	if (err)
       console.error(err)
 	});
+  
   
   //copiamos lo que hay en scripts y lo ponemos en el spripts creado
-  fs.copyDir("./node_modules/gitbook-start-alex-moi-nitesh/scripts", "./" + argv.d + "/scripts", function (err) {
+  fs.copyDir(path.join(__dirname, '..', 'scripts'), "./" + directorio + "/scripts", function (err) {
   	if (err)
       console.error(err)
 	});
  
  
-  
-  
-  fs.copyFile("./node_modules/gitbook-start-alex-moi-nitesh/gulpfile.js","./" + argv.d+ "/gulpfile.js",function(err){
+  //copiamos gulpfile
+  fs.copyFile(path.join(__dirname,'..','gulpfile.js'), "./" + directorio + "/gulpfile.js",function(err){
     if(err)
       console.log(err);
   });
 
-  fs.copyFile("./node_modules/gitbook-start-alex-moi-nitesh/book.json","./" + argv.d + "/book.json",function(err){
-    if(err)
-    console.log(err);
-  });
-  
-  fs.copyFile("./node_modules/gitbook-start-alex-moi-nitesh/template/package.json","./" + argv.d + "/package.json",function(err){
-    if(err)
-    console.log(err);
-  });
-  
- 
- 
- 
- 
- 
 
+  //copiamos el book
+  fs.copyFile(path.join(__dirname,'..','book.json'),"./" + directorio + "/book.json",function(err){
+    if(err)
+    console.log(err);
+  });
+
+
+  //renderizando package.json
+  ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), { autor: author , nombre: name, repourl: repo_url }, 
+    function(err,str){
+      if(err) {
+          console.error(err);
+      }
+      if(str) {
+          fs.writeFile("./" + directorio + "/package.json", str);
+      }
+  });
+  
+  
+}else{
+  console.log("Debe especificar un nombre para el directorio");
 }
