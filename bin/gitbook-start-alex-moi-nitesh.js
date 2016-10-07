@@ -78,12 +78,12 @@ if(!entra){
   
     //renderizando package.json
     ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), { autor: author , nombre: name, repourl: repo_url }, 
-      function(err,str){
+      function(err,data){
         if(err) {
             console.error(err);
         }
-        if(str) {
-            fs.writeFile("./" + directorio + "/package.json", str);
+        if(data) {
+            fs.writeFile("./" + directorio + "/package.json", data);
         }
     });
     
