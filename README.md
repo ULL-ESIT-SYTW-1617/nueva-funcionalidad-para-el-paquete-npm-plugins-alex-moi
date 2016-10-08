@@ -27,25 +27,25 @@ Para ejecutar, ponemos el siguiente comando:
 ```shell
 gitbook-start-alex-moi-nitesh [opciones]
 ```
-*[opciones] 
+[opciones] 
 *    -a: Especificar el autor del gitbook
 *    -n: Especificar el nombre del gitbook
 *    -d: Especificar el nombre del directorio
 *    -u: Especificar la url del repositorio git
 *    -h: Help (ayuda)
-*
-*
-*Una vez instalado y ejecutado, hacemos:
+
+
+Una vez instalado y ejecutado, hacemos:
 *    --> npm install
 *    --> gitbook install (para instalar los **plugins**)
-*
-*
-*Una vez completado los "ficheros.md" de nuestro book, para construirlo y publicarlo hacemos:
+
+
+Una vez completado los "ficheros.md" de nuestro book, para construirlo y publicarlo hacemos:
 *    --> gulp build
 *    --> gulp deploy
-*
-*
-*Un ejemplo de la versión final del gitbook sería: https://alu0100782851.github.io/prueba/
+
+
+Un ejemplo de la versión final del gitbook sería: https://alu0100782851.github.io/prueba/
 
 
 ## Enlaces importantes
