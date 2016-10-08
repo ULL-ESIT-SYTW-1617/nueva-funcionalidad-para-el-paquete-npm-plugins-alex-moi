@@ -36,16 +36,20 @@ gitbook-start-alex-moi-nitesh [opciones]
 
 
 Una vez instalado y ejecutado, hacemos:
-*    --> npm install
-*    --> gitbook install (para instalar los **plugins**)
 
+```shell
+npm install
+gitbook install
+```
 
 Una vez completado los "ficheros.md" de nuestro book, para construirlo y publicarlo hacemos:
-*    --> gulp build
-*    --> gulp deploy
 
+```shell
+gulp build
+gulp deploy
+```
 
-Un ejemplo de la versión final del gitbook sería: https://alu0100782851.github.io/prueba/
+Un ejemplo de la versión final del gitbook sería: [Prueba](https://alu0100782851.github.io/prueba/)
 
 
 ## Enlaces importantes
