@@ -49,7 +49,7 @@ gulp build
 gulp deploy
 ```
 
-Un ejemplo de la versión final del gitbook sería: [Prueba](https://alu0100782851.github.io/prueba/)
+Un ejemplo de la versión final del gitbook sería: [Ejemplo](https://alu0100782851.github.io/prueba/)
 
 
 ## Enlaces importantes
