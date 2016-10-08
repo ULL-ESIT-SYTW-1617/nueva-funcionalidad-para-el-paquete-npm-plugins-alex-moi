@@ -28,7 +28,7 @@ Para ejecutar, ponemos el siguiente comando:
 gitbook-start-alex-moi-nitesh [opciones]
 ```
 [opciones] 
-    -a: Especificar el autor del gitbook
+\n    -a: Especificar el autor del gitbook
     -n: Especificar el nombre del gitbook
     -d: Especificar el nombre del directorio
     -u: Especificar la url del repositorio git
