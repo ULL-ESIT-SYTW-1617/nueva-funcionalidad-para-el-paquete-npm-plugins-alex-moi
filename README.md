@@ -1,24 +1,52 @@
 # Sistemas y Tecnologías Web. Tareas Iniciales.
 
 
-##Tutorial instalación 
+## Introducción
+
+El objetivo de esta práctica es crear un package **NodeJS** y publicarlo en npm. El paquete se construye a partir de el código que haya desarrollado en la práctica anterior.
+
+##Tutorial para su instalación
 
 Instalar el paquete
+
 ```shell
+npm install -g gitbook-start-alex-moi-nitesh
 npm install --save gitbook-start-alex-moi-nitesh
 ```
+
 Instalación ficheros
 
 ```shell
 gitbook-start-alex-moi-nitesh -d [nombre directorio]
 ```
 
+##Tutorial para su ejecución
+
+Para ejecutar, ponemos el siguiente comando:
+
+```shell
+gitbook-start-alex-moi-nitesh [opciones]
+```
+[opciones] 
+    -a: Especificar el autor del gitbook
+    -n: Especificar el nombre del gitbook
+    -d: Especificar el nombre del directorio
+    -u: Especificar la url del repositorio git
+    -h: Help (ayuda)
 
 
+Una vez instalado y ejecutado, hacemos:
+    --> npm install
+    --> gitbook install (para instalar los **plugins**)
 
-## Introducción
 
-El objetivo de esta práctica es crear un package **NodeJS** y publicarlo en npm. El paquete se construye a partir de el código que haya desarrollado en la práctica anterior.
+Una vez completado los "ficheros.md" de nuestro book, para construirlo y publicarlo hacemos:
+    --> gulp build
+    --> gulp deploy
+
+
+Un ejemplo de la versión final del gitbook sería: https://alu0100782851.github.io/prueba/
+
 
 ## Enlaces importantes
 *  [Página en NPM](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh)
