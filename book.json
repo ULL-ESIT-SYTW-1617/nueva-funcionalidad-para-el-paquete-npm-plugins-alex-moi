@@ -18,7 +18,7 @@
           "footerPath" : "layouts/footer.html"
         },
         "autocover": {
-            "title": "Tareas iniciales SYTW",
+            "title": "Nueva Funcionalidad para el paquete npm plugins SYTW",
             "author": "Alex-Moi",
             "pluginsConfig": {
                 "autocover": {
