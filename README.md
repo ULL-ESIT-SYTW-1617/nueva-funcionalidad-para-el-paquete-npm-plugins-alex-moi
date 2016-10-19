@@ -30,9 +30,10 @@ gitbook-start-alex-moi-nitesh [opciones]
 [opciones] 
 *    -a: Especificar el autor del gitbook
 *    -n: Especificar el nombre del gitbook
-*    -d: Especificar el nombre del directorio
+*    -c: Especificar el nombre del directorio
 *    -u: Especificar la url del repositorio git
 *    -h: Help (ayuda)
+*    -d: para hacer un deploy a IaaS
 
 
 Una vez instalado y ejecutado, hacemos:
@@ -50,6 +51,13 @@ gulp deploy
 ```
 
 Un ejemplo de la versión final del gitbook sería: [Ejemplo](https://alu0100782851.github.io/prueba/)
+
+##Tutorial para ejecutar el "deploy"
+
+Para ejecutar la función deploy hay que escribir el siguiente comando:
+
+`gitbook-start-alex-moi-nitesh --deploy [falta por completar]`
+
 
 
 ## Enlaces importantes

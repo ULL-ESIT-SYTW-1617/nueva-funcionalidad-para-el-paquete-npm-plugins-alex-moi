@@ -16,17 +16,20 @@ var directorio  = argv.c || 'Book';
 var repo_url    = argv.u || '';
 var help        = argv.h;
 var deploy      = argv.d
-/*
+
 if(help){
   console.log("\nAyuda GitBook-Start-Alex-Moi-Nitesh:"
               +"\n\nLos argumentos aceptados son:"
               +"\n -a: Especificar el autor del gitbook"
               +"\n -n: Especificar el nombre del gitbook"
-              +"\n -d: Especificar el nombre del directorio"
-              +"\n -u: Especificar la url del repositorio git\n");
+              +"\n -c: Especificar el nombre del directorio"
+              +"\n -u: Especificar la url del repositorio git"
+              +"\n -h: Help (Ayuda)"
+              +"\n -d: Deploy en IaaS(iaas.ull.es)\n");
   entra = true;
 }
-*/
+
+
 
 if(!entra){
   if(deploy){
