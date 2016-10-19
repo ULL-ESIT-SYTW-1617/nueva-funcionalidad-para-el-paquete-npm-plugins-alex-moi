@@ -4,15 +4,19 @@ var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs-extended');
 var ejs = require("ejs");
 var path = require("path");
+var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
+
+
+
 
 var entra       = false;
 var author      = argv.a || '';
 var name        = argv.n || '';
-var directorio  = argv.d;
+var directorio  = argv.c || 'Book';
 var repo_url    = argv.u || '';
 var help        = argv.h;
-
-
+var deploy      = argv.d
+/*
 if(help){
   console.log("\nAyuda GitBook-Start-Alex-Moi-Nitesh:"
               +"\n\nLos argumentos aceptados son:"
@@ -22,9 +26,14 @@ if(help){
               +"\n -u: Especificar la url del repositorio git\n");
   entra = true;
 }
-
+*/
 
 if(!entra){
+  if(deploy){
+    iaas(deploy, '3');
+    
+  }
+  /*
   if(directorio){
     
     //creamos el directorio raiz
@@ -90,5 +99,5 @@ if(!entra){
     
   }else{
     console.log("Debe especificar un nombre para el directorio");
-  }
+  }*/
 }
