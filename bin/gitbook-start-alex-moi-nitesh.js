@@ -15,8 +15,15 @@ var name        = argv.n || '';
 var directorio  = argv.c || 'Book';
 var repo_url    = argv.u || '';
 var help        = argv.h;
-var deploy      = argv.d
 
+
+//Despliegue en iaas
+var deploy_iaas = argv.d;
+var ip_iaas     = argv.iaas_ip;
+var path_iaas   = argv.iaas_path;
+
+
+/*
 if(help){
   console.log("\nAyuda GitBook-Start-Alex-Moi-Nitesh:"
               +"\n\nLos argumentos aceptados son:"
@@ -27,15 +34,21 @@ if(help){
               +"\n -h: Help (Ayuda)"
               +"\n -d: Deploy en IaaS(iaas.ull.es)\n");
   entra = true;
-}
+}*/
 
 
 
 if(!entra){
-  if(deploy){
-    iaas(deploy, '3');
+  
+  if(deploy_iaas == "iaas-ull-es"){
     
+    if(ip_iaas && path_iaas)
+      iaas(ip_iaas, path_iaas);
+    else
+      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");
   }
+  else
+    console.log("Especifique correctamente el nombre del servidor");
   /*
   if(directorio){
     
