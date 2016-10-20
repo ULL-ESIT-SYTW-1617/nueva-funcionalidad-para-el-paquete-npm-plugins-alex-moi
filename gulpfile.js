@@ -1,8 +1,8 @@
-var gulp  = require('gulp');
+/*var gulp  = require('gulp');
 var shell = require('gulp-shell');
-var git = require('gulp-git');
+var git = require('gulp-git');*/
 
-
+/*
 gulp.task('buildeploy', ['build', 'deploy']);
 
 gulp.task('build', function() {
@@ -27,7 +27,7 @@ gulp.task('wikibuild', function() {
 
 gulp.task('wikideploy', function() {
    return gulp.src('').pipe(shell(['./scripts/deploy-wiki'])); 
-});
+});*/
 
 
 
@@ -37,9 +37,20 @@ gulp.task('wikideploy', function() {
 
 var fs = require('fs');
 var gulp = require('gulp')
-var GulpSSH = require('gulp-ssh')
- 
-var config = {
+var GulpSSH = require('gulp-ssh');
+var cwd = process.cwd();
+var paquete = require(cwd+'/package.json');
+
+var url = paquete.repository.url;
+var iaas_ip = paquete.iaas.IP;
+var iaas_path = paquete.iaas.PATH;
+
+console.log(url)
+console.log(iaas_ip)
+console.log(iaas_path)
+
+
+/*var config = {
   host: '10.6.128.129',
   port: 22,
   username: 'usuario',
@@ -55,4 +66,4 @@ var gulpSSH = new GulpSSH({
 gulp.task('deploy-iaas', function () {
   return gulpSSH
     .shell(['cd /home/usuario/src/sytw/iaas', 'git pull']);
-})
+})*/
