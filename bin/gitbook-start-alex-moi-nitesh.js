@@ -29,7 +29,9 @@ if(help){
               +"\n -c: Especificar el nombre del directorio"
               +"\n -u: Especificar la url del repositorio git"
               +"\n -h: Help (Ayuda)"
-              +"\n -d: Deploy en IaaS(iaas.ull.es)\n");
+              +"\n -d: Deploy en IaaS(iaas.ull.es)"
+              +"\n --iaas_ip: Especificar la IP del IaaS"
+              +"\n --iaas_path: Especificar la PATH de IaaS\n");
   entra = true;
 }
 

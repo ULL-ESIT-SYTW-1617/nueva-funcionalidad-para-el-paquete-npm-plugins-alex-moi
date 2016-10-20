@@ -24,10 +24,9 @@ gitbook-start-alex-moi-nitesh -d [nombre directorio]
 
 Para ejecutar, ponemos el siguiente comando:
 
-```shell
-gitbook-start-alex-moi-nitesh [opciones]
-```
-[opciones] 
+`gitbook-start-alex-moi-nitesh [opciones]`
+
+[opciones] serían:
 *    -a: Especificar el autor del gitbook
 *    -n: Especificar el nombre del gitbook
 *    -c: Especificar el nombre del directorio
@@ -56,9 +55,38 @@ Un ejemplo de la versión final del gitbook sería: [Ejemplo](https://alu0100782
 
 Para ejecutar la función deploy hay que escribir el siguiente comando:
 
-`gitbook-start-alex-moi-nitesh --deploy [falta por completar]`
+`gitbook-start-alex-moi-nitesh -d iaas-ull-es [Obligatorias] [Otras Opciones]`
+
+[Obligatorias] serían:
+
+```
+--iaas_ip: Especificar la IP del IaaS
+--iaas_path: Especificar la PATH de IaaS
+```
 
 
+[Otras Opciones] serían:
+
+```
+-a: Especificar el autor del gitbook
+-n: Especificar el nombre del gitbook
+-c: Especificar el nombre del directorio
+-u: Especificar la url del repositorio git
+```
+
+Ejemplo con la parte obligatoria:
+`gitbook-start-alex-moi-nitesh -d iaas-ull-es --iaas_ip 192.162.30.50 --iaas_path ./MyPath`
+
+Con la parte obligarotia, se crea el gitbook:
+*   sin un nombre del autor
+*   sin un nombre del gitbook
+*   sin una URL para el repositorio
+*   con nombre del directorio: /Book (por defecto)
+
+AHora bien, si queremos especificarle las otras opciones, pondíamos:
+
+*   Ejemplo Completo:
+`gitbook-start-alex-moi-nitesh -d iaas-ull-es --iaas_ip 192.162.30.50 --iaas_path ./MyPath -a AuthorsName -n MyGitbook -c /MyDirectorio -u http://MyUrl.git`   
 
 ## Enlaces importantes
 *  [Página en NPM](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh)
