@@ -40,17 +40,7 @@ if(help){
 
 if(!entra){
   
-  if(deploy_iaas == "iaas-ull-es"){
-    
-    if(ip_iaas && path_iaas)
-      iaas(ip_iaas, path_iaas);
-    else
-      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");
-  }
-  else
-    console.log("Especifique correctamente el nombre del servidor");
-  /*
-  if(directorio){
+    if(directorio){
     
     //creamos el directorio raiz
     fs.createDir("./" + directorio, function(err){
@@ -99,21 +89,33 @@ if(!entra){
       if(err)
       console.log(err);
     });
-  
-  
-    //renderizando package.json
-    ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), { autor: author , nombre: name, repourl: repo_url }, 
-      function(err,data){
-        if(err) {
-            console.error(err);
-        }
-        if(data) {
-            fs.writeFile("./" + directorio + "/package.json", data);
-        }
-    });
     
     
   }else{
     console.log("Debe especificar un nombre para el directorio");
-  }*/
+  }
+  
+  
+  if(deploy_iaas == "iaas-ull-es"){
+    
+    if(ip_iaas && path_iaas)
+      
+      //renderizando package.json para añadir opciones del iaas
+      ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), 
+      { autor: author , nombre: name, repourl: repo_url, ip_iaas_ull: ip_iaas , path_iaas_ull: path_iaas}, 
+        function(err,data){
+          if(err) {
+              console.error(err);
+          }
+          if(data) {
+              fs.writeFile("./" + directorio + "/package.json", data);
+          }
+      });
+    else
+      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");
+  }
+  else
+    console.log("Especifique correctamente el nombre del servidor");
+  
+
 }
