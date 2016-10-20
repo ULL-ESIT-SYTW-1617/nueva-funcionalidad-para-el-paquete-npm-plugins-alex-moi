@@ -1,13 +1,12 @@
 var gulp  = require('gulp');
 var shell = require('gulp-shell');
 var git = require('gulp-git');
-var fs = require('fs');
-var gulp = require('gulp')
 var GulpSSH = require('gulp-ssh');
+
+var fs = require('fs');
 var cwd = process.cwd();
 var paquete = require(cwd+'/package.json');
 var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
-
 
 
 
@@ -39,18 +38,20 @@ gulp.task('wikideploy', function() {
 
 
 
-
 //deploy de iaas
 var url = paquete.repository.url;
 var iaas_ip = paquete.iaas.IP;
 var iaas_path = paquete.iaas.PATH;
 
+
 console.log(url)
 console.log(iaas_ip)
 console.log(iaas_path)
 
-//falta los ficheros fuente que hay q subir al iaas
 
 gulp.task('deploy-iaas', function () {
-    iaas(iaas_ip, iaas_path);
+    
+    iaas.initialize();
+    
+    iaas.deploy(iaas_ip, iaas_path, url);
 })
