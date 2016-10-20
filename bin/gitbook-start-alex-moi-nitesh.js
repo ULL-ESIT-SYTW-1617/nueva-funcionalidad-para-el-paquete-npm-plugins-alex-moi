@@ -4,9 +4,6 @@ var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs-extended');
 var ejs = require("ejs");
 var path = require("path");
-var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
-
-
 
 
 var entra       = false;
@@ -23,7 +20,7 @@ var ip_iaas     = argv.iaas_ip;
 var path_iaas   = argv.iaas_path;
 
 
-/*
+
 if(help){
   console.log("\nAyuda GitBook-Start-Alex-Moi-Nitesh:"
               +"\n\nLos argumentos aceptados son:"
@@ -34,7 +31,7 @@ if(help){
               +"\n -h: Help (Ayuda)"
               +"\n -d: Deploy en IaaS(iaas.ull.es)\n");
   entra = true;
-}*/
+}
 
 
 
