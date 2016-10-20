@@ -89,6 +89,11 @@ if(!entra){
       console.log(err);
     });
     
+    //copiamos server.js
+    fs.copyFile(path.join(__dirname,'..','server.js'),"./" + directorio + "/server.js",function(err){
+      if(err)
+      console.log(err);
+    });
     
   }else{
     console.log("Debe especificar un nombre para el directorio");

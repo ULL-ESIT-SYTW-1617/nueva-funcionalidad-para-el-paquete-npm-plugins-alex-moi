@@ -1,10 +1,11 @@
 {
   "name": "gitbook-start-alex-moi-nitesh",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Module to build a book on GitBook",
   "main": "bin/gitbook-start-alex-moi-nitesh.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "gitbook-cli": "^2.3.0",
     "gulp-git": "^1.12.0",
     "gulp-shell": "^0.5.2",
-    "ssh-exec": "^2.0.0"
+    "ssh-exec": "^2.0.0",
+    "express": "^4.14.0"
   }
 }
