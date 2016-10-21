@@ -102,6 +102,9 @@ if(!entra){
   
   if(deploy_iaas == "iaas-ull-es"){
     
+    var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
+    iaas.initialize();
+    
     if(ip_iaas && path_iaas)
       
       //renderizando package.json para añadir opciones del iaas

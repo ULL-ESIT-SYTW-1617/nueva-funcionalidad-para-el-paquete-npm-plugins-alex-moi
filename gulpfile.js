@@ -6,7 +6,7 @@ var git = require('gulp-git');
 var fs = require('fs');
 var cwd = process.cwd();
 var paquete = require(cwd+'/package.json');
-var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
+
 
 //instalar dependencias globales y locales para gitbook,gitbook-cli,child-process
 
@@ -35,23 +35,4 @@ gulp.task('wikibuild', function() {
 gulp.task('wikideploy', function() {
    return gulp.src('').pipe(shell(['./scripts/deploy-wiki'])); 
 });
-
-
-
-gulp.task('deploy-iaas', function () {
-    //deploy de iaas
-    var url = paquete.repository.url;
-    var iaas_ip = paquete.iaas.IP;
-    var iaas_path = paquete.iaas.PATH;
-    
-    
-    console.log(url)
-    console.log(iaas_ip)
-    console.log(iaas_path)
-    
-    
-    iaas.initialize();
-    
-    iaas.deploy(iaas_ip, iaas_path, url);
-})
 
