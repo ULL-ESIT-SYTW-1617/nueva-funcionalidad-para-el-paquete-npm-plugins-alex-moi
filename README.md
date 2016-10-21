@@ -1,4 +1,4 @@
-# Sistemas y Tecnologías Web. Nueva Funcionalidad para el Paquete **npm** plugins
+# Sistemas y Tecnologías Web. Nueva Funcionalidad para el Paquete npm plugins
 
 
 ## Introducción
