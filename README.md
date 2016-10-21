@@ -1,4 +1,4 @@
-# Sistemas y Tecnologías Web. Tareas Iniciales.
+# Sistemas y Tecnologías Web. Nueva Funcionalidad para el Paquete npm plugins
 
 
 ## Introducción
