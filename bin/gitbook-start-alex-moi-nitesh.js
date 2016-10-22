@@ -4,7 +4,7 @@ var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs-extended');
 var ejs = require("ejs");
 var path = require("path");
-
+var child = require("child_process");
 
 var entra       = false;
 var author      = argv.a || '';
@@ -101,9 +101,24 @@ if(!entra){
   
   
   if(deploy_iaas == "iaas-ull-es"){
+    /*console.log("CHIVATO")
+    child.exec('cd '+path.join(__dirname,'../../../..',directorio), function(error, stdout, stderr){
+      if(error)
+        console.log(error)
+      
+      console.log(stderr);
+      console.log(stdout);
+    })*/
+    child.exec('npm install --save-dev gitbook-start-iaas-ull-es-alex-moi --prefix '+path.join(process.cwd(),directorio)+' ', function(error, stdout, stderr){
+      if(error)
+        console.log(error)
+      
+      console.log(stderr);
+      console.log(stdout);
+    })
     
-    var iaas = require("gitbook-start-iaas-ull-es-alex-moi");
-    iaas.initialize();
+    var iaas = require('node_modules/gitbook-start-iaas-ull-es-alex-moi');
+    /*iaas.initialize();
     
     if(ip_iaas && path_iaas)
       
@@ -119,7 +134,7 @@ if(!entra){
           }
       });
     else
-      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");
+      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");*/
   }
   else
     console.log("Especifique correctamente el nombre del servidor");
