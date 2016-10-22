@@ -42,55 +42,55 @@ if(!entra){
     if(directorio){
     
     //creamos el directorio raiz
-    fs.createDir("./" + directorio, function(err){
+    fs.createDir(path.join(process.cwd(), directorio), function(err){
       if(err)
         console.log(err);
   	});
     
     
     //creamos el directorio txt
-    fs.createDir("./" + directorio + "/txt", function(err){
+    fs.createDir(path.join(process.cwd(), directorio , 'txt'), function(err){
       if(err)
         console.log(err);
   	});
   	
   	
   	//creamos el directorio scripts
-  	fs.createDir("./" + directorio + "/scripts", function(err){
+  	fs.createDir(path.join(process.cwd(), directorio , 'scripts'), function(err){
       if(err)
         console.log(err);
   	});
   	
   	
   	//copiamos lo que hay en txt y lo ponemos en el txt creado
-    fs.copyDir(path.join(__dirname, '..', 'txt'), "./" + directorio + "/txt", function (err) {
+    fs.copyDir(path.join(__dirname, '..', 'txt'), path.join(process.cwd(), directorio , 'txt'), function (err) {
     	if (err)
         console.error(err)
   	});
     
     
     //copiamos lo que hay en scripts y lo ponemos en el spripts creado
-    fs.copyDir(path.join(__dirname, '..', 'scripts'), "./" + directorio + "/scripts", function (err) {
+    fs.copyDir(path.join(__dirname, '..', 'scripts'), path.join(process.cwd(), directorio , 'scripts'), function (err) {
     	if (err)
         console.error(err)
   	});
    
    
     //copiamos gulpfile
-    fs.copyFile(path.join(__dirname,'..','gulpfile.js'), "./" + directorio + "/gulpfile.js",function(err){
+    fs.copyFile(path.join(__dirname,'..','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
       if(err)
         console.log(err);
     });
   
   
     //copiamos el book
-    fs.copyFile(path.join(__dirname,'..','book.json'),"./" + directorio + "/book.json",function(err){
+    fs.copyFile(path.join(__dirname,'..','book.json'),path.join(process.cwd(), directorio , 'book.json'),function(err){
       if(err)
       console.log(err);
     });
     
     //copiamos server.js
-    fs.copyFile(path.join(__dirname,'..','server.js'),"./" + directorio + "/server.js",function(err){
+    fs.copyFile(path.join(__dirname,'..','server.js'),path.join(process.cwd(), directorio , 'server.js'),function(err){
       if(err)
       console.log(err);
     });
@@ -109,7 +109,7 @@ if(!entra){
       console.log(stderr);
       console.log(stdout);
     })*/
-    child.exec('npm install --save-dev gitbook-start-iaas-ull-es-alex-moi --prefix '+path.join(process.cwd(),directorio)+' ', function(error, stdout, stderr){
+    child.exec('npm install --save-dev gitbook-start-iaas-ull-es-alex-moi --prefix '+path.join(process.cwd(),directorio)+'', function(error, stdout, stderr){
       if(error)
         console.log(error)
       
@@ -117,24 +117,26 @@ if(!entra){
       console.log(stdout);
     })
     
-    var iaas = require('node_modules/gitbook-start-iaas-ull-es-alex-moi');
-    /*iaas.initialize();
     
-    if(ip_iaas && path_iaas)
+    if(ip_iaas && path_iaas){
       
-      //renderizando package.json para añadir opciones del iaas
-      ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), 
-      { autor: author , nombre: name, repourl: repo_url, ip_iaas_ull: ip_iaas , path_iaas_ull: path_iaas}, 
-        function(err,data){
-          if(err) {
-              console.error(err);
-          }
-          if(data) {
-              fs.writeFile("./" + directorio + "/package.json", data);
-          }
-      });
+        var iaas = require(path.join(process.cwd(),directorio,'node_modules/gitbook-start-iaas-ull-es-alex-moi'));
+        iaas.initialize();
+        
+        //renderizando package.json para añadir opciones del iaas
+        ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'), 
+        { autor: author , nombre: name, repourl: repo_url, ip_iaas_ull: ip_iaas , path_iaas_ull: path_iaas}, 
+            function(err,data){
+                if(err) {
+                    console.error(err);
+                }
+                if(data) {
+                    fs.writeFile("./" + directorio + "/package.json", data);
+                }
+            });
+    }
     else
-      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");*/
+      console.log("Debe especificar la ip y la ruta del servidor para el despliegue");
   }
   else
     console.log("Especifique correctamente el nombre del servidor");
