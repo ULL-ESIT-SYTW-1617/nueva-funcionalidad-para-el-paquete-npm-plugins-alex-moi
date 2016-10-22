@@ -100,15 +100,8 @@ if(!entra){
   }
   
   
-  if(deploy_iaas == "iaas-ull-es"){
-    /*console.log("CHIVATO")
-    child.exec('cd '+path.join(__dirname,'../../../..',directorio), function(error, stdout, stderr){
-      if(error)
-        console.log(error)
-      
-      console.log(stderr);
-      console.log(stdout);
-    })*/
+  if(deploy_iaas && deploy_iaas == "iaas-ull-es"){
+    
     child.exec('npm install --save-dev gitbook-start-iaas-ull-es-alex-moi --prefix '+path.join(process.cwd(),directorio)+'', function(error, stdout, stderr){
       if(error)
         console.log(error)
@@ -120,7 +113,7 @@ if(!entra){
     
     if(ip_iaas && path_iaas){
       
-        var iaas = require(path.join(process.cwd(),directorio,'node_modules/gitbook-start-iaas-ull-es-alex-moi'));
+        var iaas = require(path.join(process.cwd(),directorio,'node_modules','gitbook-start-iaas-ull-es-alex-moi','gitbook-start-iaas-ull-es.js'));
         iaas.initialize();
         
         //renderizando package.json para añadir opciones del iaas
@@ -131,7 +124,7 @@ if(!entra){
                     console.error(err);
                 }
                 if(data) {
-                    fs.writeFile("./" + directorio + "/package.json", data);
+                    fs.writeFile(path.join(process.cwd(),directorio,'package.json'), data);
                 }
             });
     }
