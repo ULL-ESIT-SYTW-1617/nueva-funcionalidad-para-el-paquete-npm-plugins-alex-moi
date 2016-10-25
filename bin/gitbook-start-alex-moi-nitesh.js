@@ -176,6 +176,8 @@ else{
             });
       }
   }
-
+  if(argv == undefined || ((author || repo_url || name) && !directorio) ){
+    console.log("Especifique al menos el nombre del directorio");
+  }
 
 }
