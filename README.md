@@ -57,6 +57,8 @@ Para ejecutar la función deploy hay que escribir el siguiente comando:
 ```
 
 
+
+
 [Otras Opciones] serían:
 
 ```
@@ -79,6 +81,16 @@ AHora bien, si queremos especificarle las otras opciones, pondíamos:
 
 *   Ejemplo Completo:
 `gitbook-start-alex-moi-nitesh -d iaas-ull-es --iaas_ip 192.162.30.50 --iaas_path ./MyPath -a AuthorsName -n MyGitbook -c /MyDirectorio -u http://MyUrl.git` 
+
+## Instalación plugin gitbook-start-iaas-ull-es-alex-moi
+
+*   Instale el paquete `npm install -g gitbook-start-alex-moi-nitesh`
+*   Instale el paquete `npm install --save gitbook-start-alex-moi-nitesh`
+*   Instale el plugin `npm install -g gitbook-start-iaas-ull-es-alex-moi`
+*   Instale el plugin `npm install --save gitbook-start-iaas-ull-es-alex-moi`
+
+
+
 `gitbook-start-alex-moi-nitesh -c alex -d iaas-ull-es --iaas_ip 10.6.128.129 --iaas_path /home/usuario/ -u url_repo`
 
 ## Enlaces importantes
