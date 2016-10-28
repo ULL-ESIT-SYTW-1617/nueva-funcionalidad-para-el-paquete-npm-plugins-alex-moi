@@ -77,12 +77,6 @@ function crear_estructura(dir){
         console.log(err);
       }); 
       
-       //copiamos .gitignore
-      fs.copyFile(path.join(__dirname,'..','template','.gitignore'),path.join(process.cwd(), dir , '.gitignore'),function(err){
-        if(err)
-        console.log(err);
-      }); 
-
 }
 
 
@@ -118,7 +112,7 @@ else{
         });
   }
   
-  if(deploy_iaas){
+  else if(deploy_iaas){
 
       //OPCION 2
       if(!directorio){//Si especificas deploy solo
@@ -182,7 +176,7 @@ else{
             });
       }
   }
-  if(argv == undefined || ((author || repo_url || name) && !directorio) ){
+  else{
     console.log("Especifique al menos el nombre del directorio");
   }
 
